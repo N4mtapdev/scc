@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Kiểm tra cú pháp
+        run: |
+          for f in bin/cli.mjs src/*.mjs; do node --check "$f"; done
+      - name: Bản gộp dist/scc.mjs phải mới nhất
+        run: node scripts/build.mjs --check
+      - name: Chạy test
+        run: node --test
+      - name: Chạy thử CLI
+        run: node bin/cli.mjs --version
