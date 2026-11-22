@@ -1,0 +1,26 @@
+{
+  "name": "strip-comments-cli",
+  "version": "1.4.0",
+  "description": "CLI tương tác xóa comment trong JS, TS, CSS, HTML. Chạy tốt trên Termux, không cần thư viện ngoài.",
+  "type": "module",
+  "bin": {
+    "strip-comments": "bin/cli.mjs",
+    "scc": "bin/cli.mjs"
+  },
+  "scripts": {
+    "start": "node bin/cli.mjs",
+    "build": "node scripts/build.mjs",
+    "build:check": "node scripts/build.mjs --check",
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/N4mtapdev/scc.git"
+  },
+  "bugs": { "url": "https://github.com/N4mtapdev/scc/issues" },
+  "homepage": "https://github.com/N4mtapdev/scc#readme",
+  "keywords": ["strip-comments", "remove-comments", "cli", "termux", "javascript", "css", "html", "tui"],
+  "engines": { "node": ">=18" },
+  "files": ["bin", "src", "dist", "README.md", "LICENSE"],
+  "license": "MIT"
+}
