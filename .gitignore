@@ -1,0 +1,6 @@
+node_modules/
+stripped/
+*.clean.*
+*.bak
+.DS_Store
+.scc-test-*
